@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+//https://gobyexample.com/slices
+
 func main() {
 	fmt.Println("Welcome to the playground!")
 	fmt.Println("The time is", time.Now())
@@ -103,6 +105,11 @@ func main() {
 
 	//数组切片,声明变量，不使用会报错
 	sliceArr := make([]int, 3)
+	fmt.Println(sliceArr)
+
+	sliceArr[0] = 100
+	fmt.Println(len(sliceArr))
+	sliceArr = append(sliceArr, 200, 300, 400)
 	fmt.Println(sliceArr)
 
 }
