@@ -112,4 +112,51 @@ func main() {
 	sliceArr = append(sliceArr, 200, 300, 400)
 	fmt.Println(sliceArr)
 
+	//切片是指针传递
+	ssslice := sliceArr
+	ssslice[0] = 9999
+	fmt.Println(sliceArr)
+
+	//切片操作和python类似
+	s1 := sliceArr[0:3]
+	fmt.Println(s1)
+	s2 := sliceArr[:]
+	fmt.Println(s2)
+	//构造一个多维不对齐的切片数组
+	supers := make([][]int, 3)
+	for i := 0; i < 3; i++ {
+		supers[i] = make([]int, i+1)
+	}
+	fmt.Println(supers)
+
+	//Maps 创建一个String，int的Map
+	maps := make(map[string]int, 5)
+	maps["aaa"] = 2
+	maps["bbb"] = 3
+
+	//删除一个key,value
+	delete(maps, "aaa")
+	fmt.Println(maps)
+
+	value, ifGetSuccess := maps["bbb"]
+	fmt.Println(ifGetSuccess, value)
+
+	//另一种方式构建
+	newMaps := map[string]int{"a": 1, "b": 2}
+	fmt.Println(newMaps)
+
+	all := 0
+	numbers := []int{1, 2, 3, 4, 5}
+	//对于第一个变量，如果不需要也可以这样 for _,num :=range numbers
+	for i, num := range numbers {
+		all += num
+		fmt.Println(i)
+	}
+	fmt.Println(all)
+
+	// for map
+
+	for k, v := range map[string]string{"a": "!", "b": "@", "c": "#"} {
+		fmt.Println(k, v)
+	}
 }
